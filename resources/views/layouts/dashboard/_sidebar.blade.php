@@ -14,9 +14,16 @@
                  data-accordion="false">
 
                  <li class="nav-item">
-                     <a href="{{ route('dashboard.home') }}" class="nav-link active">
+                     <a href="{{ route('dashboard.home.index') }}" class="nav-link active">
                          <i class="nav-icon fas fa-th"></i>
                          <p>Home</p>
+                     </a>
+                 </li>
+
+                 <li class="nav-item">
+                     <a href="{{ route('dashboard.companies.index') }}" class="nav-link">
+                         <i class="nav-icon fas fa-th"></i>
+                         <p>Companies</p>
                      </a>
                  </li>
              </ul>

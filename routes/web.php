@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CompanyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,11 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    // return view('dashboard');
-    return view('dashboard.home');
-})->middleware(['auth', 'verified'])->name('dashboard.home');
 
+Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(function () {
+    Route::get('/', function () {
+        return view('dashboard.home');
+    })->name('home.index');
+
+    Route::get('companies/data', [CompanyController::class, 'data'])->name('companies.data');
+    Route::resource('companies', CompanyController::class);
+});
 
 // Route::middleware('auth')->group(function () {
 //     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
