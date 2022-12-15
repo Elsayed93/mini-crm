@@ -28,6 +28,13 @@ class Company extends Model
      */
     protected $appends = ['logo_image_path'];
 
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = ['logo', 'created_at', 'updated_at'];
+
 
     public function getLogoImagePathAttribute()
     {
