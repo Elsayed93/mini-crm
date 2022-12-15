@@ -35,4 +35,15 @@
 {{-- <script src="{{ asset('dashboard_files') }}/js/pages/dashboard.js"></script> --}}
 
 
+
+
+{{-- logout --}}
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#log-out-link', function(e) {
+            e.preventDefault();
+            $('#log-out-form').submit();
+        });
+    });
+</script>
 @stack('scripts')

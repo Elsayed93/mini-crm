@@ -21,7 +21,7 @@
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media" style="text-align: center">
-                  
+
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 {{ auth()->user()->name }}
@@ -33,7 +33,11 @@
                 <div class="dropdown-divider"></div>
 
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">Logout</a>
+                <a href="#" id="log-out-link" class="dropdown-item dropdown-footer">Logout</a>
+
+                <form action="{{ route('logout') }}" method="post" id="log-out-form">
+                    @csrf
+                </form>
             </div>
         </li>
     </ul>
