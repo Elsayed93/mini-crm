@@ -7,21 +7,22 @@
 
      <div class="sidebar">
 
-
          <!-- Sidebar Menu -->
          <nav class="mt-3">
              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                  data-accordion="false">
 
                  <li class="nav-item">
-                     <a href="{{ route('dashboard.home.index') }}" class="nav-link active">
+                     <a href="{{ route('dashboard.home.index') }}"
+                         class="nav-link {{ activeLink('dashboard.home.index') }}">
                          <i class="nav-icon fas fa-th"></i>
                          <p>Home</p>
                      </a>
                  </li>
 
                  <li class="nav-item">
-                     <a href="{{ route('dashboard.companies.index') }}" class="nav-link">
+                     <a href="{{ route('dashboard.companies.index') }}"
+                         class="nav-link {{ activeLink('dashboard.companies.index') }}">
                          <i class="nav-icon fas fa-th"></i>
                          <p>Companies</p>
                      </a>
