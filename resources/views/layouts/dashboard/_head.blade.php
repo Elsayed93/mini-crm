@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
     <style>
-        table th {
+        table th,td {
             text-align: center !important;
         }
 
