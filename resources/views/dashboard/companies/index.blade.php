@@ -59,7 +59,8 @@
 
                 "columns": [{
                         "searchable": false,
-                        "data": "id"
+                        "sortable": false,
+                        "data": "DT_RowIndex"
                     },
                     {
                         "data": "name",
