@@ -27,7 +27,6 @@ class StoreRequest extends FormRequest
             'name' => 'required|string|max:60',
             'email' => 'required|email|unique:companies,email',
             'website' => 'required|url|max:199',
-            // 'revenue' => 'required|numeric|between:0,99999999.99',
             'revenue' => ['required', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'],
             'logo' => 'sometimes|image|mimes:jpg,jpeg,png,gif,svg|dimensions:min_width=100,min_height=100'
         ];

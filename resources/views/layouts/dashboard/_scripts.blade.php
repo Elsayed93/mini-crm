@@ -10,6 +10,11 @@
 <!-- datatables -->
 <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 
+{{-- toastr --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- toastr -->
+@include('layouts.dashboard._toastr')
+
 <!-- logout -->
 <script>
     $(document).ready(function() {
@@ -33,6 +38,20 @@
             }
         }
     }
+</script>
+
+<!-- delete btn -->
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.deleteBtn', function(e) {
+            e.preventDefault();
+            const confirmDelete = confirm('Are you sure?');
+            if (confirmDelete) {
+                $(this).closest('form').submit();
+            }
+
+        });
+    });
 </script>
 
 @stack('scripts')

@@ -5,7 +5,7 @@
 
 @section('content')
     <!-- Content Header (Page header) -->
-    <x-content-header main-page="Companies" sub-page="Create" route="companies" />
+    <x-content-header main-page="Companies" sub-page="Edit" route="companies" />
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -17,21 +17,23 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Create Company</h3>
+                            <h3 class="card-title">Edit Company</h3>
                         </div>
                         <!-- /.card-header -->
 
 
                         <!-- form start -->
-                        <form action="{{ route('dashboard.companies.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('dashboard.companies.update', $company->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
 
                             <div class="card-body">
                                 <!-- name -->
                                 <div class="form-group">
                                     <label for="inputName">Company Name <span class="required-field">*</span></label>
                                     <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                        id="inputName" name="name" value="{{ old('name') }}"
+                                        id="inputName" name="name" value="{{ old('name') ?? $company->name }}"
                                         placeholder="Enter company name" required>
 
                                     @error('name')
@@ -45,7 +47,8 @@
                                             class="required-field">*</span></label>
                                     <input type="email" name="email"
                                         class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1"
-                                        placeholder="Enter company email" value="{{ old('email') }}" required>
+                                        placeholder="Enter company email" value="{{ old('email') ?? $company->email }}"
+                                        required>
 
                                     @error('email')
                                         <div class="text-danger">{{ $message }}</div>
@@ -56,7 +59,7 @@
                                 <div class="form-group">
                                     <label for="inputwebsite">Company Website <span class="required-field">*</span></label>
                                     <input type="url" class="form-control @error('website') is-invalid @enderror"
-                                        id="inputwebsite" name="website" value="{{ old('website') }}"
+                                        id="inputwebsite" name="website" value="{{ old('website') ?? $company->website }}"
                                         placeholder="Enter company website" required>
 
                                     @error('website')
@@ -68,7 +71,7 @@
                                 <div class="form-group">
                                     <label for="inputrevenue">Company Revenue <span class="required-field">*</span></label>
                                     <input type="number" class="form-control @error('revenue') is-invalid @enderror"
-                                        id="inputrevenue" name="revenue" value="{{ old('revenue') }}"
+                                        id="inputrevenue" name="revenue" value="{{ old('revenue') ?? $company->revenue }}"
                                         placeholder="Enter company revenue" required step=".01">
 
                                     @error('revenue')
@@ -93,8 +96,8 @@
 
                                     <!-- logo preview -->
                                     <div class="form-group">
-                                        <img src="" alt="" class="img-thumbnail image-show" width="100"
-                                            style="display: none;">
+                                        <img src="{{ $company->logo_image_path }}" alt=""
+                                            class="img-thumbnail image-show" width="100">
                                     </div>
                                 </div>
                             </div>
