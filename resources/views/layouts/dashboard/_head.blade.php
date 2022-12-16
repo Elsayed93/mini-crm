@@ -17,12 +17,17 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
     <style>
-        table th,td {
+        table th,
+        td {
             text-align: center !important;
         }
 
         table td {
             vertical-align: middle !important;
+        }
+
+        .required-field {
+            color: red;
         }
     </style>
     @stack('head')

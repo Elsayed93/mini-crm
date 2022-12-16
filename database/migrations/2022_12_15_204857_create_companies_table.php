@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('logo');
             $table->string('website');
-            $table->string('revenue');
+            $table->decimal('revenue', 10, 2);
             $table->timestamps();
         });
     }

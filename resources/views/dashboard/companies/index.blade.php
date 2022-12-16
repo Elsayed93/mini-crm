@@ -16,7 +16,7 @@
                     <div class="card">
                         <div class="card-header mb-3">
                             <h3 class="card-title">
-                                <a href="#" class="btn btn-block btn-primary">Add Company</a>
+                                <a href="{{route('dashboard.companies.create')}}" class="btn btn-block btn-primary">Add Company</a>
                             </h3>
 
                         </div>

@@ -22,7 +22,7 @@ class CompanyFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'logo' => 'company.png',
             'website' => 'test website',
-            'revenue' => '5000',
+            'revenue' => rand(5000,10000000),
         ];
     }
 }

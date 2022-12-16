@@ -38,6 +38,10 @@ class Company extends Model
 
     public function getLogoImagePathAttribute()
     {
-        return asset('storage/companies/company.png');
+        if ($this->logo == 'company.png') {
+            return asset('storage/companies/company.png');
+        } else {
+            return asset('storage') . substr($this->logo, strlen('public'));
+        }
     }
 }

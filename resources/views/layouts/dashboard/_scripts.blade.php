@@ -19,4 +19,20 @@
         });
     });
 </script>
+
+<!-- image preview -->
+<script>
+    let imgInp = document.getElementsByClassName('imgInp');
+    if (imgInp[0]) {
+        imgInp[0].onchange = evt => {
+            const [file] = imgInp[0].files
+            if (file) {
+                let image_preview = document.getElementsByClassName('image-show');
+                image_preview[0].style.display = "inline-block";
+                image_preview[0].src = URL.createObjectURL(file);
+            }
+        }
+    }
+</script>
+
 @stack('scripts')
