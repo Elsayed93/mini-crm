@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Companies\StoreRequest;
 use App\Http\Requests\Companies\UpdateRequest;
 use App\Models\Company;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 

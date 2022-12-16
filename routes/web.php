@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\CompanyController;
+use App\Http\Controllers\Dashboard\EmployeeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +26,13 @@ Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(functi
         return view('dashboard.home');
     })->name('home.index');
 
+    // companies
     Route::get('companies/data', [CompanyController::class, 'data'])->name('companies.data');
     Route::resource('companies', CompanyController::class);
+
+    // employees
+    Route::get('employees/data', [EmployeeController::class, 'data'])->name('employees.data');
+    Route::resource('employees', EmployeeController::class);
 });
 
 // Route::middleware('auth')->group(function () {

@@ -20,11 +20,21 @@
                      </a>
                  </li>
 
+                 <!-- companies -->
                  <li class="nav-item">
                      <a href="{{ route('dashboard.companies.index') }}"
                          class="nav-link {{ activeLink('dashboard.companies.index') }}">
                          <i class="nav-icon fas fa-th"></i>
                          <p>Companies</p>
+                     </a>
+                 </li>
+
+                 <!-- employees -->
+                 <li class="nav-item">
+                     <a href="{{ route('dashboard.employees.index') }}"
+                         class="nav-link {{ activeLink('dashboard.employees.index') }}">
+                         <i class="nav-icon fas fa-th"></i>
+                         <p>Employees</p>
                      </a>
                  </li>
              </ul>

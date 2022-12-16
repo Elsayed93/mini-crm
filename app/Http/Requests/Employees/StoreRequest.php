@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Companies;
+namespace App\Http\Requests\Employees;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,11 +24,12 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:60',
-            'email' => 'required|email|unique:companies,email',
-            'website' => 'required|url|max:189',
-            'revenue' => ['required', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'],
-            'logo' => 'sometimes|image|mimes:jpg,jpeg,png,gif,svg|dimensions:min_width=100,min_height=100'
+            'first_name' => 'required|string|max:60',
+            'last_name' => 'required|string|max:60',
+            'email' => 'required|email|unique:employees,email',
+            'phone' => ['required', 'regex:/(01)[0-9]{9}/'],
+            'occupation' => 'required|string|max:60',
+            'company_id' => 'required|exists:companies,id'
         ];
     }
 }
