@@ -49,4 +49,9 @@ class Company extends Model
     {
         return $this->hasMany(Employee::class, 'company_id');
     }
+
+    public function formatRevenue()
+    {
+        return number_format($this->revenue, 2) . ' EGP';
+    }
 }

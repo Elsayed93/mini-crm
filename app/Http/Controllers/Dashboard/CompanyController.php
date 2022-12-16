@@ -31,6 +31,9 @@ class CompanyController extends Controller
         return DataTables::eloquent($model)
             ->addIndexColumn()
             ->addColumn('actions', 'dashboard.includes._actions')
+            ->addColumn('revenue', function ($row) {
+                return $row->formatRevenue();
+            })
             ->toJson();
     }
     /**
