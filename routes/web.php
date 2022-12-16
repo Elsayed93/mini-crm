@@ -28,6 +28,7 @@ Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(functi
 
     // companies
     Route::get('companies/data', [CompanyController::class, 'data'])->name('companies.data');
+    Route::get('company-employees/data', [CompanyController::class, 'companyEmployeesData'])->name('company.employees');
     Route::resource('companies', CompanyController::class);
 
     // employees

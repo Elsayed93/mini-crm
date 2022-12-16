@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Companies\StoreRequest;
 use App\Http\Requests\Companies\UpdateRequest;
 use App\Models\Company;
+use App\Models\Employee;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -68,7 +70,16 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        return view('dashboard.companies.show',compact('company'));
+        return view('dashboard.companies.show', compact('company'));
+    }
+
+    public function companyEmployeesData(Request $request)
+    {
+        $companyEmployees = Employee::where('company_id', $request->company_id);
+
+        return DataTables::eloquent($companyEmployees)
+            ->addIndexColumn()
+            ->toJson();
     }
 
     /**

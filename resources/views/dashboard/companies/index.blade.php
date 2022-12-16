@@ -25,7 +25,7 @@
                             <table class="table table-hover text-nowrap" id="companies-datatable-table">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>#</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Logo</th>

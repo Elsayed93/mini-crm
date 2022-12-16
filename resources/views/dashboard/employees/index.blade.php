@@ -23,10 +23,10 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-3">
-                            <table class="table table-hover text-nowrap" id="Employees-datatable-table">
+                            <table class="table table-hover text-nowrap" id="employees-datatable-table">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>#</th>
                                         <th>First Name</th>
                                         <th>Last Name</th>
                                         <th>Email</th>
@@ -52,7 +52,7 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $('#Employees-datatable-table').DataTable({
+            $('#employees-datatable-table').DataTable({
                 processing: true,
                 serverSide: true,
                 "dom": "flrtip",

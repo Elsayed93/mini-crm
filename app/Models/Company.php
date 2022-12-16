@@ -44,4 +44,9 @@ class Company extends Model
             return asset('storage') . substr($this->logo, strlen('public'));
         }
     }
+
+    public function employees()
+    {
+        return $this->hasMany(Employee::class, 'company_id');
+    }
 }

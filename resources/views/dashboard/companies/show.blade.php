@@ -69,6 +69,36 @@
                     </div>
                     <!-- /.card -->
 
+
+
+                    <div class="card">
+                        <div class="card-header mb-3">
+                            <h3 class="card-title">
+                                <a href="{{ route('dashboard.companies.create') }}" class="btn btn-block btn-primary">Add
+                                    Company</a>
+                            </h3>
+
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-3">
+                            <table class="table table-hover text-nowrap" id="company-employees-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Occupation</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
                 </div>
                 <!--/.col (left) -->
 
@@ -78,3 +108,44 @@
     </section>
     <!-- /.content -->
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#company-employees-table').DataTable({
+                processing: true,
+                serverSide: true,
+                "dom": "flrtip",
+
+                ajax: {
+                    url: "{{ route('dashboard.company.employees') }}",
+                    data: {
+                        company_id: "{{ $company->id }}",
+                    }
+                },
+
+                "columns": [{
+                        "searchable": false,
+                        "sortable": false,
+                        "data": "DT_RowIndex"
+                    },
+                    {
+                        "data": "first_name",
+                    },
+                    {
+                        "data": "last_name",
+                    },
+                    {
+                        "data": "email",
+                    },
+                    {
+                        "data": "phone",
+                    },
+                    {
+                        "data": "occupation",
+                    },
+                ]
+            });
+        });
+    </script>
+@endpush
