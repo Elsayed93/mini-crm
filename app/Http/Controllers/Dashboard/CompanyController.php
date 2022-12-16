@@ -69,7 +69,7 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        //
+        return view('dashboard.companies.show',compact('company'));
     }
 
     /**
