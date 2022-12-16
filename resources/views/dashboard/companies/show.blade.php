@@ -5,7 +5,7 @@
 
 @section('content')
     <!-- Content Header (Page header) -->
-    <x-content-header main-page="Companies" sub-page="Edit" route="companies" />
+    <x-content-header main-page="Companies" sub-page="Show" route="companies" />
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -17,7 +17,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Edit Company</h3>
+                            <h3 class="card-title">Show Company</h3>
                         </div>
                         <!-- /.card-header -->
 
