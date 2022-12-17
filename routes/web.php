@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Dashboard\CompanyController;
 use App\Http\Controllers\Dashboard\EmployeeController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Dashboard\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,15 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [HomeController::class, 'index'])->name('home.index')->middleware('auth');
 
 Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(function () {
-    Route::get('/', function () {
-        return view('dashboard.home');
-    })->name('home.index');
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
     // companies
     Route::get('companies/data', [CompanyController::class, 'data'])->name('companies.data');
@@ -35,11 +30,5 @@ Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(functi
     Route::get('employees/data', [EmployeeController::class, 'data'])->name('employees.data');
     Route::resource('employees', EmployeeController::class);
 });
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
 
 require __DIR__ . '/auth.php';
