@@ -76,7 +76,7 @@ To make this directory accessible in public folder, Please run this command:
 php artisan storage:link
 ```
 
-> Notice: Please Create the companies directory manually at the beginning and save any default image for companies in it and rename this image <u> company.png </u> to render default images for companies.
+> Notice: Please Create the companies directory manually at the beginning and save any default image for companies in it and rename this image <ins>company.png</ins> to render default images for companies.
 
 ## Factories and Seeders
 
