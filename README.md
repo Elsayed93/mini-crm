@@ -44,7 +44,15 @@ composer install
 
 ### 6- Generate App Key
 
-### 7- Run the server
+### 7- npm install && npm run dev.
+
+> Because We use Laravel 9 and it use Vit tool bundler by default. So To avoid vite manifest not found at error, Please run these commands: 
+
+```
+npm install
+npm run dev
+```
+### 8- Run the server
 
 ```
 cp .env-example .env
