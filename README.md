@@ -84,3 +84,6 @@ php artisan storage:link
     - There is AdminSeeder to enable an admin to login.
     - There are another two seeders for Companies and Employees (For Testing Purposes), Feel free to seed data if you want to fill the application with fake data.
 </p>
+
+
+## THANK YOU :)
