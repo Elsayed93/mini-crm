@@ -23,7 +23,7 @@ class EmployeeFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'phone' => fake()->phoneNumber(),
             'occupation' => fake()->text(20),
-            'company_id' => rand(1, 999),
+            'company_id' => rand(1, 99),
         ];
     }
 }
