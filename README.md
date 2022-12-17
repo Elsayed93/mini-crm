@@ -54,7 +54,7 @@ php artisan key:generate
 
 ### 7- npm install && npm run dev.
 
-> Because We use Laravel 9 and it use Vit tool bundler by default. So To avoid vite manifest not found at error, Please run these commands: 
+> Because We use Laravel 9 and it use Vit tool bundler by default. So To avoid vite manifest file not found error, Please run these commands: 
 
 ```
 npm install
@@ -76,7 +76,7 @@ To make this directory accessible in public folder, Please run this command:
 php artisan storage:link
 ```
 
-> Notice: Please Make the companies directory manually and save any default image for companies in it to render default images for companies.
+> Notice: Please Create the companies directory manually at the beginning and save any default image for companies in it and rename this image <u> company.png </u> to render default images for companies.
 
 ## Factories and Seeders
 
